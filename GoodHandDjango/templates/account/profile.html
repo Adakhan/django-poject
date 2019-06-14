@@ -1,0 +1,38 @@
+{% extends "account/wrapper.html" %}
+
+{% block content %}
+
+
+    <article>
+        <div class="container" style="margin-top: 5%; margin-bottom: 10%">
+            <hr>
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="post-heading">
+                        <a href="/account/profile/edit/"><button class="btn btn-dark btn-lg">Edit</button></a>
+                        <h1 class="text-uppercase text-center">{{user}}'s profile</h1>
+                        <hr>
+                        <img src="{{ user.userprofile.image.url }}" onerror="this.src='Bermet.jpeg'" alt="#" class="img-thumbnail mx-auto d-block">
+                        <hr>
+                    </div>
+                    <p class="text-muted">Username:</p>
+                    <p class="font-weight-bold">{{user}}</p>
+                    <p class="text-muted">First name:</p>
+                    <p class="font-weight-bold text-capitalize">{{user.first_name}}</p>
+                    <p class="text-muted">Last name:</p>
+                    <p class="font-weight-bold text-capitalize">{{user.last_name}}</p>
+                    <p class="text-muted">Telephone:</p>
+                    <p class="font-weight-bold text-capitalize">{{user.userprofile.phone}}</p>
+                    <p class="text-muted">Email address:</p>
+                    <p class="font-weight-bold">{{user.email}}</p>
+                    <p class="text-muted">Address:</p>
+                    <p class="font-weight-bold">{{user.userprofile.address}}</p>
+                </div>
+            </div>
+            <hr>
+         </div>
+    </article>
+
+
+
+ {% endblock %}

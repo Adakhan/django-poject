@@ -1,0 +1,30 @@
+{% extends "main/wrapper.html" %}
+
+{% block content %}
+
+
+
+  <div class="container" style=" margin-bottom: 6%">
+      <hr>
+      {% for post in object_list  %}
+      <div class="row">
+
+          <div class="col-lg-8 col-md-10 mx-auto">
+              <div class="post-preview">
+                  <a href="{{post.id}}">
+                      <h2 class="post-title text-uppercase">
+                          {{post.product_name}}
+                      </h2>
+                  </a>
+                  <h5 class="text-muted text-uppercase">Category: {{post.product_category}}</h5>
+                  <p class="post-meta text-muted">Posted on {{post.date|date:"d-m-Y at H:i:s"}} </p>
+              </div>
+          </div>
+      </div>
+      <hr>
+  {% endfor  %}
+  </div>
+
+
+
+{% endblock %}

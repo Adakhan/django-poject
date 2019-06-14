@@ -1,0 +1,35 @@
+{% extends "account/wrapper.html" %}
+
+{% block content %}
+
+
+    <article>
+        <div class="container" style="margin-top: 5%; margin-bottom: 10%">
+            <hr>
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="post-heading">
+                        <h1 class="text-uppercase">{{product.product_name}}</h1>
+                        <h7 class="text-muted">Posted on {{product.date|date:"d-m-Y at H:i:s"}}</h7>
+                        <hr>
+                        <img src="{{ product.product_image.url }}" class="img-thumbnail mx-auto d-block">
+                        <hr>
+                    </div>
+                    <p class="text-muted">Description:</p>
+                    <p class="font-weight-bold">{{product.description|safe|linebreaks}}</p>
+                    <hr>
+                    <p class="text-muted">Username:</p>
+                    <p class="font-weight-bold">{{product.product_owner.username}}</p>
+                    <p class="text-muted">Phone number:</p>
+                    <p class="font-weight-bold">{{ product.product_owner_info.phone }}</p>
+                    <p class="text-muted">Email address:</p>
+                    <p class="font-weight-bold">{{product.product_owner.email}}</p>
+                </div>
+            </div>
+            <hr>
+         </div>
+    </article>
+
+
+
+ {% endblock %}
